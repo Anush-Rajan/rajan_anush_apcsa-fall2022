@@ -18,8 +18,15 @@ public class AsciiArt
 		System.out.println("               /  \\               " );
 		System.out.println("              /    \\              " );
 		System.out.println("             [------]             " );
-		//add other output
+		System.out.println("/~\\");
+		System.out.println("C oo");
+		System.out.println("_( ^)");
+		System.out.println("/   ~\\");
 
+		//add other output
+		
+
+		
 		System.out.println(" \n\n\n\nHelpFul Hints" );
 		System.out.println("\\\\ draws one backslash on the screen!\n" );
 		System.out.println("\\\" draws one double quote on the screen!\n" );
