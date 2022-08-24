@@ -12,8 +12,8 @@ import static java.lang.Math.*;
 
 public class MilesPerHour
 {
-	private int distance, hours, minutes;
-	private double mph;
+	private int distance, hours;
+	private double minutes, mph;
 
 	public MilesPerHour()
 	{
@@ -27,14 +27,20 @@ public class MilesPerHour
 
 	public void setNums(int dist, int hrs, int mins)
 	{
+		distance = dist;
+		hours = hrs;
+		minutes = mins;
 	}
 
 	public void calcMPH()
 	{
+		mph = (distance/((minutes/60)+hours));
+		
 	}
 
 	public void print()
 	{
+		System.out.println(distance + " miles in " + hours + " hours and " + minutes + " minutes = " + Math.round(mph) + " MPH. ");
 	}
 	
 	//create a print or toString or both
