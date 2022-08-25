@@ -17,6 +17,7 @@ public class Distance
 
 	public Distance()
 	{
+		setCoordinates(0, 0, 0, 0);
 	}
 
 	public Distance(int x1, int y1, int x2, int y2)
@@ -25,10 +26,18 @@ public class Distance
 
 	public void setCoordinates(int x1, int y1, int x2, int y2)
 	{
+		xOne = x1;
+		yOne = y1;
+		xTwo = x2;
+		yTwo = y2;
 	}
 
 	public void calcDistance()
 	{
+		int ydiff = (yTwo-yOne);
+		int xdiff = (xTwo-xOne);
+		distance = Math.sqrt(Math.pow(xdiff,2) + Math.pow(ydiff, 2));
+		
 	}
 	
 	public double getDistance()
@@ -38,6 +47,9 @@ public class Distance
 	
 	public void print()
 	{
+		System.out.print("distance == ");
+		System.out.printf("%.3f", distance);
+
 	}
 	
 	//complete print or the toString
