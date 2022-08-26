@@ -12,10 +12,18 @@ public class NumberVerify
 {
 	public static boolean isOdd( int num )
 	{
-		return true;
+		if (num < 0) {
+			num = Math.abs(num);
+			Math.abs(num);
+		}
+		return (num%2 == 1);
 	}
 	public static boolean isEven( int num )
 	{
-		return true;
+		if (num < 0) {
+			num = Math.abs(num);
+		}
+		return (num%2 == 0);
+
 	}	
 }

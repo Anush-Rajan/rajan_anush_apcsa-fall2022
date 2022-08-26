@@ -18,8 +18,10 @@ public class DiscountRunner
 		out.print("Enter the original bill amount :: ");
 		double amt = keyboard.nextDouble();
 		
-		Discount solve = new Distance();
-		solve.getDiscountedBill(amt);
+		Discount solve = new Discount();
+		System.out.println("Bill after discount:: ");
+		System.out.printf("%.2f\n", solve.getDiscountedBill(amt));
+		
 		
 
 	}
