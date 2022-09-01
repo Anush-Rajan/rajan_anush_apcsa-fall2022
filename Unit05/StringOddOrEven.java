@@ -19,20 +19,28 @@ public class StringOddOrEven
 
 	public StringOddOrEven(String s)
 	{
+		setString("");
 	}
 
 	public void setString(String s)
 	{
+		word = s;
 	}
 
  	public boolean isEven()
  	{
-		return false;
+		return (((word.length())%2) == 0);
 	}
 
  	public String toString()
  	{
  		String output="";
+ 		if (isEven()) {
+ 			output = "even";
+ 		}
+ 		else {
+ 			output = "odd";
+ 		}
  		return output;
 	}
 }
