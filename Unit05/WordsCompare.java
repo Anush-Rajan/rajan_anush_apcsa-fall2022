@@ -24,8 +24,8 @@ public class WordsCompare
 
 	public void setWords(String one, String two)
 	{
-		one = wordOne;
-		two = wordTwo;
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public void compare()
