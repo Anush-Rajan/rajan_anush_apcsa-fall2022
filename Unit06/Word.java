@@ -36,7 +36,7 @@ public class Word
 	public String getBackWards()
 	{
 		String back="";
-		for (int i=word.length() - 1; i > 0; i--) {
+		for (int i=word.length() - 1; i >= 0; i--) {
 			back += word.charAt(i);
 		}
 		return back;
