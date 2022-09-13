@@ -45,6 +45,6 @@ public class BiggestDouble
 
 	public String toString()
 	{
-	   return "";
+	   return one + " " + two + " " + three + " " + four + " ";
 	}
 }
