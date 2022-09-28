@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -7,12 +9,12 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 2;
 
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 10;
 
 	/**
 	 * Tests shuffling methods.
@@ -61,6 +63,25 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffled = new int[values.length];
+		int k = 0;
+		int end1 = (values.length + 1)/2;
+		
+		for (int j = 0; j<end1; j++) {
+			shuffled[k] = values[j];
+			k = k +2;
+		}
+		
+		k=1;
+		for (int i=end1; i < values.length; i++) {
+			shuffled[k] = values[i];
+			k = k + 2;
+		}
+		
+		for (int i=0; i < shuffled.length; i++) {
+			values[i] = shuffled[i];
+		}
+		
 	}
 
 	/**
@@ -76,5 +97,36 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		for (int i = values.length -1; i > 0; i--) {
+			int randomInt = (int) (Math.random() * i);
+			int val1 = values[i];
+			int val2 = values[randomInt];
+			
+			values[i] = val2;
+			values[randomInt] = val1;
+		}
+	}
+	
+	private static void flip() {
+		int randomNum = (int) (Math.random() * 5);
+		
+		if (randomNum >= 0 && randomNum <= 3) {
+			System.out.println("heads");
+		}
+		else {
+			System.out.println("tails");
+		}
+	}
+	
+	private static boolean arePermutations(int[] arr1, int[] arr2) {
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+		
+		for (int i = 0; i < arr1.length; i++) {
+			if (i > arr2.length - 1 || arr1[i] != arr2.length) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
