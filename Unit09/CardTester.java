@@ -1,3 +1,4 @@
+
 /**
  * This is a class that tests the Card class.
  */
@@ -22,3 +23,4 @@ public class CardTester {
 				
 	}
 }
+
