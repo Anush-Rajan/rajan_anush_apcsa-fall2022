@@ -23,16 +23,14 @@ public class ListOddToEven
 		}
 		
 		for (int i = 0; i < ray.size(); i++) {
-
-			if (oddindex >= 0 && evenindex >= 0) {
-				return evenindex - oddindex;
-			}
-			
 			if (ray.get(i) % 2 == 0) {
 				evenc++;
 			}
 			if (evenc == evencount) {
 				evenindex = i;
+			}
+			if (oddindex >= 0 && evenindex >= 0) {
+				return evenindex - oddindex;
 			}
 			
 			if ((oddindex < 0) && (ray.get(i) % 2 == 1)) {
