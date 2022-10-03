@@ -12,11 +12,27 @@ public class ListOddToEven
 	{
 		int evenindex = -1;
 		int oddindex = -1;
+		int evencount = 0;
+		int evenc = 0;
+		
+		
+		for (int i =0; i<ray.size(); i++) {
+			if (ray.get(i)%2 == 0) {
+				evencount++;
+			}
+		}
 		
 		for (int i = 0; i < ray.size(); i++) {
-			
+
 			if (oddindex >= 0 && evenindex >= 0) {
 				return evenindex - oddindex;
+			}
+			
+			if (ray.get(i) % 2 == 0) {
+				evenc++;
+			}
+			if (evenc == evencount) {
+				evenindex = i;
 			}
 			
 			if ((oddindex < 0) && (ray.get(i) % 2 == 1)) {
@@ -24,12 +40,7 @@ public class ListOddToEven
 				continue;
 			}
 			
-			if (((evenindex < 0) && (oddindex >= 0))  && (ray.get(i) % 2 == 0)) {
-				evenindex = i;
-				continue;
-			}
-			
-			
+
 		}
 		
 		return -1;
