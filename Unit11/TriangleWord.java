@@ -11,11 +11,13 @@ public class TriangleWord
 		
 	public static void printTriangle(String word)
 	{
-		String answer = "";
-		int count = 1;
-		for (int i=0; i < word.length(); i++) {
-			answer += word.substring(0, count);
-			count++;
+		for (int i = 1; i <= word.length(); ++i) {
+			for (int j = 0; j < i; j++) {
+				for (int k = 0; k < i; k++) {
+					System.out.print(word.charAt(k));
+				}
+			}
+			System.out.println();
 		}
 	}
 }
