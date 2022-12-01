@@ -98,7 +98,6 @@ public class Picture extends SimplePicture
     }
   }
   
-<<<<<<< Updated upstream
   public void keepOnlyBlue() {
 	  Pixel[][] pixels = this.getPixels2D();
 	    for (Pixel[] rowArray : pixels)
@@ -160,8 +159,7 @@ public class Picture extends SimplePicture
 	    }
   }
   
-=======
->>>>>>> Stashed changes
+
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
