@@ -13,13 +13,19 @@ public class NumberShifter
 	public static int[] makeLucky7Array( int size)
 	{
 		int[] arr = new int[size];
+<<<<<<< Updated upstream
 		for(int i = 0; i<size; i++) {
 			arr[i] = (int) (10*(Math.random()))+1;
+=======
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) ((Math.random() * 10) + 1);
+>>>>>>> Stashed changes
 		}
 		return arr;
 	}
 	public static void shiftEm(int[] array)
 	{
+<<<<<<< Updated upstream
 		System.out.println(Arrays.toString(array));
 		for(int i=0; i<array.length-1; i++){
 		      int min = i;
@@ -35,5 +41,8 @@ public class NumberShifter
 		      }
 		   }
 		System.out.println(Arrays.toString(array));
+=======
+		
+>>>>>>> Stashed changes
 	}
 }

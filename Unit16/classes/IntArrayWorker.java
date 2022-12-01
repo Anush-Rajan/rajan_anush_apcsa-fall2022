@@ -2,9 +2,12 @@ public class IntArrayWorker
 {
   /** two dimensional matrix */
   private int[][] matrix = null;
+<<<<<<< Updated upstream
   private int count = 0;
   private int maxval = 0;
   private int columncount = 0;
+=======
+>>>>>>> Stashed changes
   
   /** set the matrix to the passed one
     * @param theMatrix the one to use
@@ -65,6 +68,7 @@ public class IntArrayWorker
     }
   }
   
+<<<<<<< Updated upstream
   public int getCount(int val) {  
 	  for (int i = 0; i < matrix.length; i++) {
 		  for (int j = 0; j < matrix[i].length; j++) {
@@ -96,6 +100,8 @@ public class IntArrayWorker
 	  return columncount;
   }
   
+=======
+>>>>>>> Stashed changes
   /**
    * print the values in the array in rows and columns
    */

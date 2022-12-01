@@ -63,7 +63,11 @@ public class PictureTester
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
+<<<<<<< Updated upstream
     //testGrayscale(); <--
+=======
+    //testGrayscale();
+>>>>>>> Stashed changes
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
