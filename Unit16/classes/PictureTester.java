@@ -224,7 +224,14 @@ public class PictureTester
   }
   
   public static void testEncodeAndDecode() {
-  	
+  	Picture water = new Picture("beach.jpg");
+  	Picture hiddenmessage = new Picture("msg.jpg");
+  	hiddenmessage.explore();
+  	water.explore();
+  	water.encode(hiddenmessage);
+  	water.explore();
+  	water.decode();
+  	water.explore();
   }
 
   
@@ -248,7 +255,7 @@ public class PictureTester
 	  //testMirrorHorizontalBotToTop();
       //testMirrorTemple();
       //testMirrorArms();
-      testMirrorGull();
+      //testMirrorGull();
       //testMirrorDiagonal();
       //testCollage();
 	  //testMyCollage();
@@ -261,5 +268,6 @@ public class PictureTester
       //testSetRedToHalfValueInTopHalf();
       //testClearBlueOverValue(200);
       //testGetAverageForColumn(0);
+	  testEncodeAndDecode();
   }
 }

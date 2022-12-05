@@ -581,50 +581,53 @@ public class Picture extends SimplePicture
   }
   
   public void encode(Picture pic) {
-	  Pixel[][] bgd_pixels = this.getPixels2D();
-	  Pixel[][] pic_pixels = pic.getPixels2D();
-	 for (int r = 0; r<bgd_pixels.length; r++) {
-		 for(int c = 0; c<bgd_pixels[0].length; c++) {
-			 Pixel pixObj = pic_pixels[r][c];
-			 Pixel bgdObj = bgd_pixels[r][c];
-			 if (pixObj.getRed() == 0) {
-				 bgdObj.setGreen(bgdObj.getGreen() + pixObj.getGreen());
-				 bgdObj.setBlue(bgdObj.getBlue() + pixObj.getBlue());
-				 double average = (bgdObj.getRed() + bgdObj.getGreen() + bgdObj.getBlue())/3;
-				 while (Math.round(average) > average) {
-					 bgdObj.setRed(bgdObj.getRed()-1);
-					 average = (bgdObj.getRed() + bgdObj.getGreen() + bgdObj.getBlue())/3;
-				 }
+	  Pixel[][] picture = this.getPixels2D();
+	  Pixel[][] message = pic.getPixels2D();
+	  Pixel currPixel = null;
+	  Pixel messagePixel = null;
+	 for (int r = 0; r<picture.length; r++) {
+		 for(int c = 0; c<picture[0].length; c++) {
+			 currPixel = picture[r][c];
+			 messagePixel = message[r][c];
+			 if (currPixel.getRed() % 2 == 1) {
+				 currPixel.setRed(currPixel.getRed()-1);
 			 }
-			 else {
-				 double average = (bgdObj.getRed() + bgdObj.getGreen() + bgdObj.getBlue())/3;
-				 //if (Math.round(average) < average) {
-					 bgdObj.setRed(bgdObj.getRed()+9);
-				//}
+			 if (currPixel.getBlue() % 2 == 1) {
+				 currPixel.setBlue(currPixel.getBlue()-1);
+			 }
+			 if (currPixel.getGreen() % 2 == 1) {
+				 currPixel.setGreen(currPixel.getGreen()-1);
+			 }
+			 if (messagePixel.colorDistance(Color.BLACK) < 50) {
+
+				 currPixel.setRed(currPixel.getRed()+1);
+				 currPixel.setBlue(currPixel.getBlue()+1);
+				 currPixel.setGreen(currPixel.getGreen()+1);
+
+				 
 			 }
 		 }
 	 }
   }
   
-  public Picture decode() {
-	  Pixel[][] bgd_pixels = this.getPixels2D();
-	  int height = bgd_pixels.length;
-	  int width = bgd_pixels[0].length;
-	  Picture pic = new Picture(height, width);
-	  Pixel[][] pic_pixels = pic.getPixels2D();
-	 for (int r = 0; r<bgd_pixels.length; r++) {
-		 for(int c = 0; c<bgd_pixels[0].length; c++) {
-			 Pixel pixObj = pic_pixels[r][c];
-			 Pixel bgdObj = bgd_pixels[r][c];
-			 double average = (bgdObj.getRed() + bgdObj.getGreen() + bgdObj.getBlue())/3;
-			 if (Math.round(average) < average) {
-				 pixObj.setRed(0);
-				 pixObj.setGreen(bgdObj.getGreen() - ((bgdObj.getGreen()/10)*10));
-				 pixObj.setBlue(bgdObj.getBlue() - ((bgdObj.getBlue()/10)*10));
+  public void decode() {
+	  Pixel[][] picture = this.getPixels2D();
+	  int height = picture.length;
+	  int width = picture[0].length;
+	  Pixel currPixel = null;
+	 for (int r = 0; r< height; r++) {
+		 for(int c = 0; c<width; c++) {
+			 currPixel = picture[r][c];
+			 
+			 if (currPixel.getRed() % 2 == 1) {
+				 System.out.println(currPixel.getRed());
+				 currPixel.setRed(1);
+				 currPixel.setBlue(1);
+				 currPixel.setGreen(1);
 			 }
 		 }
 	 }
-	 return pic;
+
   }
 
   
